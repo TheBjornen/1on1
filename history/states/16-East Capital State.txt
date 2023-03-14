@@ -1,0 +1,36 @@
+state = {
+	id = 16
+	name = "STATE_16"
+
+	resources = {
+		oil = 12
+		steel = 10
+		aluminium = 12
+		tungsten = 5
+		rubber = 2
+	}
+
+	history = {
+		owner = EST
+		add_core_of = EST
+
+		victory_points = { 934 100 }
+
+		buildings = {
+			air_base = 10
+			anti_air_building = 2
+			infrastructure = 5
+			industrial_complex = 4
+			arms_factory = 8
+		}
+	}
+
+	provinces = {
+		247 314 327 423 537 581 610 641 666 673 717 733 738 774 783 809 813 907 911 915 934 939 941 945 946 955 961 968 971 
+	}
+
+	manpower = 1
+	buildings_max_level_factor = 5.000
+	state_category = metropolis
+	local_supplies = 0.000
+}

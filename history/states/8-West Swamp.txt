@@ -1,0 +1,33 @@
+state = {
+	id = 8
+	name = "STATE_8"
+
+	resources = {
+		steel = 6 
+		aluminium = 6 
+		tungsten = 1 
+		rubber = 3
+	}
+
+    history = {
+        owner = WST
+        add_core_of = WST
+
+        victory_points = { 805 100 }
+
+        buildings = {	
+			air_base = 5 
+    		infrastructure = 3
+    		arms_factory = 5
+    	}
+    }
+
+	provinces = {
+		130 165 420 664 684 696 699 787 800 801 805 807 836 962 965 973 975 997 1011 1028 
+	}
+
+	manpower = 1
+	buildings_max_level_factor = 1.000
+	state_category = city
+	local_supplies = 0.000
+}
