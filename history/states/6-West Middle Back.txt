@@ -1,0 +1,36 @@
+state = {
+	id = 6
+	name = "STATE_6"
+
+	resources = {
+		oil = 12
+		steel = 10
+		aluminium = 12
+		tungsten = 5
+		rubber = 2
+	}
+
+	history = {
+		owner = WST
+		add_core_of = WST
+
+		victory_points = { 942 100 }
+
+		buildings = {
+			air_base = 10
+			anti_air_building = 2
+			infrastructure = 5
+			industrial_complex = 4
+			arms_factory = 8
+		}
+	}
+
+	provinces = {
+		226 233 320 383 612 645 660 661 690 716 751 788 796 828 921 924 928 930 937 942 950 972 979 981 989 991 1019 1029 1036 
+	}
+
+	manpower = 1
+	buildings_max_level_factor = 25.000
+	state_category = megalopolis
+	local_supplies = 0.000
+}

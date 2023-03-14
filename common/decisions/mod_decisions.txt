@@ -1,0 +1,46 @@
+mod_buildup_phase = {
+	mod_countdown = {
+
+		icon = GFX_decision_category_generic_propaganda
+
+		fire_only_once = yes
+		days_mission_timeout = 59
+
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		timeout_effect = {
+			EST = {
+				declare_war_on = {
+					target = WST
+					type = annex_everything
+				}
+			}
+		}
+	}
+
+}
+mod_cards_in_hand = {
+	mod_production_bonus = {
+
+		fire_only_once = yes
+		days_mission_timeout = 59
+
+		selectable_mission = yes
+
+		available = { 
+			hidden_trigger = {
+				has_war = no
+			}
+		}
+
+		complete_effect = {
+			add_timed_idea = {
+				idea = mod_boost_production_efficiency
+				days = 20
+			}
+		}
+	}
+}

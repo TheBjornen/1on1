@@ -1,0 +1,3 @@
+EST = "countries/East.txt"
+WST = "countries/West.txt"
+SOV = "countries/Soviet.txt"

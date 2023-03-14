@@ -1,0 +1,28 @@
+#h
+aggressive_industry = {
+	icon = GFX_idea_man_five_year_plan_tank
+	conversion_cost_civ_to_mil_factor = -0.75
+	equipment_capture_factor = aggressive_capture_factor
+	equipment_conversion_speed = aggressive_conversion_speed
+	industrial_capacity_factory = aggressive_factory_output
+	line_change_production_efficiency_factor = aggressive_retention
+	
+	
+}
+flexible_industry = {
+	icon = GFX_idea_man_five_year_plan_industry
+	production_speed_buildings_factor = balanced_construction_speed
+	industrial_capacity_factory = balanced_factory_output
+	equipment_conversion_speed = balanced_conversion_speed
+	line_change_production_efficiency_factor = balanced_retention
+	production_factory_start_efficiency_factor = balanced_efficiency_base
+	production_factory_max_efficiency_factor = balanced_efficiency_cap
+	
+}
+buildup_industry = {
+	icon = GFX_idea_generic_goods_red_bonus
+	production_speed_buildings_factor = 0.25
+	production_factory_efficiency_gain_factor = buildup_efficiency_gain
+	production_factory_start_efficiency_factor = buildup_efficiency_base
+	production_factory_max_efficiency_factor = buildup_efficiency_cap
+}

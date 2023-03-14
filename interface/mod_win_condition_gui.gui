@@ -1,0 +1,138 @@
+guiTypes = {	
+	containerWindowType = {
+		name = "mod_win_condition_window"
+		position = {x=0 y=0}
+		size = { width=100% height=310 }
+		orientation = center
+		origo = center
+		fade_time = 1
+		moveable = no
+		fade_type = linear
+		clipping = no
+		click_to_front = no
+		
+		instantTextboxType = {
+			name = "morale_title_east"
+			position = { x=85 y=-10 }
+			font = "hoi_18mbs"
+			text = "East"
+			maxWidth = 340
+			maxHeight = 23
+			format = center
+		}
+
+		instantTextboxType = {
+			name = "morale_title_west"
+			position = { x=85 y=75 }
+			font = "hoi_18mbs"
+			text = "West"
+			maxWidth = 340
+			maxHeight = 23
+			format = center
+		}
+
+		instantTextboxType = {
+			name = "morale_number_east"
+			position = { x=230 y=8 }
+			font = "hoi_18mbs"
+			text = "[?morale_east]"
+			maxWidth = 340
+			maxHeight = 23
+			format = center
+		}
+
+		instantTextboxType = {
+			name = "morale_number_west"
+			position = { x=230 y=93 }
+			font = "hoi_18mbs"
+			text = "[?morale_west]"
+			maxWidth = 340
+			maxHeight = 23
+			format = center
+		}
+		
+		instantTextboxType = {
+			name = "points_east"
+			position = { x=85 y=27 }
+			font = "hoi_18mbs"
+			text = "Total city points: [?points_east]"
+			maxWidth = 340
+			maxHeight = 23
+			format = center
+		}
+
+		instantTextboxType = {
+			name = "points_west"
+			position = { x=85 y=112 }
+			font = "hoi_18mbs"
+			text = "Total city points: [?points_west]"
+			maxWidth = 340
+			maxHeight = 23
+			format = center
+		}
+
+		iconType = {
+			name ="morale_gui_east"
+			spriteType = "GFX_morale_east"
+			position = { x=135 y=10 }
+		}
+
+		iconType = {
+			name ="morale_gui_west"
+			spriteType = "GFX_morale_west"
+			position = { x=135 y=95 }
+		}
+
+		iconType = {
+			name = "gui_flag_east"
+			spriteType = "GFX_east_flag"
+			position = { x=42 y=-8 }
+		}
+
+		iconType = {
+			name = "gui_flag_west"
+			spriteType = "GFX_west_flag"
+			position = { x=42 y=77 }
+		}
+
+		instantTextboxType = {
+			name = "explanation_text_title"
+			position = { x=38 y=165 }
+			font = "hoi_30header"
+			text = "mod_explanation_title"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+
+		instantTextboxType = {
+			name = "explanation_text_1"
+			position = { x=40 y=199 }
+			font = "hoi_18mbs"
+			text = "mod_explanation_text_1"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+
+		instantTextboxType = {
+			name = "explanation_text_2"
+			position = { x=40 y=260 }
+			font = "hoi_18mbs"
+			text = "mod_explanation_text_2"
+			maxWidth = 340
+			maxHeight = 23
+			format = left
+		}
+
+		instantTextboxType = {
+			name = "morale_calc"
+			position = { x=38 y=165 }
+			font = "hoi_18mbs"
+			text = "[?morale_calc]"
+			maxWidth = 340
+			maxHeight = 23
+			format = center
+		}
+	}
+}

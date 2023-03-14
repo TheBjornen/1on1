@@ -1,0 +1,16 @@
+scripted_gui = {
+    mod_win_condition = {
+
+        window_name = "mod_win_condition_window"
+        context_type = decision_category
+    
+        properties = {
+            morale_gui_east = {
+                frame = morale_east
+            }
+            morale_gui_west = {
+                frame = morale_west
+            }
+        }
+    }
+}

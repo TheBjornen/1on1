@@ -1,0 +1,1393 @@
+
+############################
+#INDUSTRY
+############################
+
+shared_focus = {
+	id = shared_ind_start
+	icon = GFX_goal_continuous_non_factory_construct
+	cost = 0
+	x = 4
+	y = 0
+	bypass = {
+		always = yes
+	}
+	completion_reward = { 
+		custom_effect_tooltip = this_focus_does_nothing
+	}
+}
+#AGGRESSIVE
+shared_focus = {
+	id = aggressive_industry_focus
+	icon = GFX_focus_generic_tank_production
+	cost = 2
+	relative_position_id = shared_ind_start
+	x = -2
+	y = 1
+	prerequisite = {
+		focus = shared_ind_start
+	}
+	mutually_exclusive = {
+		focus = flexible_industry_focus
+		focus = buildup_industry_focus
+	}
+	completion_reward = { 
+		set_variable = {aggressive_capture_factor = 0.03}
+		set_variable = {aggressive_conversion_speed = 0.1}
+		set_variable = {aggressive_factory_output = 0}
+		set_variable = {aggressive_retention = 0}
+		add_dynamic_modifier = {
+			modifier = aggressive_industry
+		}
+		custom_effect_tooltip = aggressive_tt_start
+		if = {
+			limit = {
+				TAG = EST
+			}
+			16 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+    				type = arms_factory
+   					level = 5
+    				instant_build = yes
+				}
+			}
+			
+		}
+		else_if = {
+			limit = { 
+				TAG = WST
+			}
+			6 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+    				type = arms_factory
+   					level = 5
+    				instant_build = yes
+				}
+			}
+		}
+	}
+}
+shared_focus = {
+	id = aggro_industry_1
+	icon = GFX_focus_generic_tank_production
+	cost = 2
+	relative_position_id = aggressive_industry_focus
+	x = -2
+	y = 1
+	prerequisite = {
+		focus = aggressive_industry_focus
+	}
+	completion_reward = { 
+		add_to_variable = {aggressive_capture_factor = 0.03}
+		custom_effect_tooltip = aggressive_tt
+		if = {
+			limit = {
+				TAG = EST
+			}
+			13 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+    				type = arms_factory
+   					level = 5
+    				instant_build = yes
+				}
+			}
+			
+		}
+		else_if = {
+			limit = { 
+				TAG = WST
+			}
+			3 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+    				type = arms_factory
+   					level = 5
+    				instant_build = yes
+				}
+			}
+		}
+	}
+}
+shared_focus = {
+	id = aggro_industry_2
+	icon = GFX_focus_generic_tank_production
+	cost = 2
+	relative_position_id = aggro_industry_1
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = aggro_industry_1
+	}
+	completion_reward = { 
+		add_to_variable = {aggressive_capture_factor = 0.03}
+		custom_effect_tooltip = aggressive_tt
+		if = {
+			limit = {
+				TAG = EST
+			}
+			20 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+    				type = arms_factory
+   					level = 5
+    				instant_build = yes
+				}
+			}
+			
+		}
+		else_if = {
+			limit = { 
+				TAG = WST
+			}
+			10 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+    				type = arms_factory
+   					level = 5
+    				instant_build = yes
+				}
+			}
+		}
+	}
+}
+shared_focus = {
+	id = aggro_industry_3
+	icon = GFX_focus_generic_tank_production
+	cost = 2
+	relative_position_id = aggro_industry_2
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = aggro_industry_2
+	}
+	completion_reward = { 
+		add_to_variable = {aggressive_capture_factor = 0.03}
+		custom_effect_tooltip = aggressive_tt
+		if = {
+			limit = {
+				TAG = EST
+			}
+			18 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+    				type = arms_factory
+   					level = 5
+    				instant_build = yes
+				}
+			}
+			
+		}
+		else_if = {
+			limit = { 
+				TAG = WST
+			}
+			8 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+    				type = arms_factory
+   					level = 5
+    				instant_build = yes
+				}
+			}
+		}
+	}
+}
+
+#LABOUR
+shared_focus = {
+	id = labour_1
+	icon = GFX_goal_generic_construction2
+	cost = 2
+	relative_position_id = aggressive_industry_focus
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = aggressive_industry_focus
+		focus = flexible_industry_focus
+	}
+	available = {
+		NOT = {
+			has_completed_focus = production_1
+		}
+	}
+	completion_reward = {
+		custom_effect_tooltip = labour_tt
+		add_to_variable = {aggressive_conversion_speed = 0.1}
+		add_to_variable = {aggressive_retention = 0.2}
+		add_to_variable = {aggressive_factory_output = 0.1}
+		add_to_variable = {balanced_conversion_speed = 0.1}
+		add_to_variable = {balanced_retention = 0.2}
+		add_to_variable = {balanced_factory_output = 0.1}
+	}
+}
+shared_focus = {
+	id = labour_2
+	icon = GFX_goal_generic_construction2
+	cost = 2
+	relative_position_id = labour_1
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = balanced_1
+		focus = labour_1
+	}
+	available = {
+		NOT = {
+			has_completed_focus = production_2
+		}
+	}
+	completion_reward = {
+		custom_effect_tooltip = labour_tt
+		add_to_variable = {aggressive_conversion_speed = 0.1}
+		add_to_variable = {aggressive_retention = 0.2}
+		add_to_variable = {aggressive_factory_output = 0.1}
+		add_to_variable = {balanced_conversion_speed = 0.1}
+		add_to_variable = {balanced_retention = 0.2}
+		add_to_variable = {balanced_factory_output = 0.1}
+	}
+}
+shared_focus = {
+	id = labour_3
+	icon = GFX_goal_generic_construction2
+	cost = 2
+	relative_position_id = labour_2
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = balanced_2
+		focus = labour_2
+	}
+	available = {
+		NOT = {
+			has_completed_focus = production_3
+		}
+	}
+	completion_reward = {
+		custom_effect_tooltip = labour_tt
+		add_to_variable = {aggressive_conversion_speed = 0.1}
+		add_to_variable = {aggressive_retention = 0.2}
+		add_to_variable = {aggressive_factory_output = 0.1}
+		add_to_variable = {balanced_conversion_speed = 0.1}
+		add_to_variable = {balanced_retention = 0.2}
+		add_to_variable = {balanced_factory_output = 0.1}
+	}
+}
+
+#FLEXIBLE
+shared_focus = {
+	id = flexible_industry_focus
+	icon = GFX_goal_generic_production
+	cost = 2
+	relative_position_id = shared_ind_start
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = shared_ind_start
+	}
+	mutually_exclusive = {
+		focus = aggressive_industry_focus
+		focus = buildup_industry_focus
+	}
+	completion_reward = {
+		add_tech_bonus = {
+			bonus = 2
+			uses = 3
+			category = industry
+		}
+		set_variable = {balanced_construction_speed = 0.1}
+		set_variable = {balanced_retention = 0}
+		set_variable = {balanced_factory_output = 0}
+		set_variable = {balanced_conversion_speed = 0}
+		set_variable = {balanced_efficiency_base = 0}
+		set_variable = {balanced_efficiency_cap = 0}
+		add_dynamic_modifier = {
+			modifier = flexible_industry
+		}
+		custom_effect_tooltip = flexible_tt_start
+		if = {
+			limit = {
+				TAG = EST
+			}
+			16 = {
+				add_extra_state_shared_building_slots = 12
+				add_building_construction = {
+    				type = arms_factory
+   					level = 2
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = industrial_complex
+   					level = 10
+    				instant_build = yes
+				}
+			}
+			
+		}
+		else_if = {
+			limit = { 
+				TAG = WST
+			}
+			6 = {
+				add_extra_state_shared_building_slots = 12
+				add_building_construction = {
+    				type = industrial_complex
+   					level = 10
+    				instant_build = yes
+				}
+			}
+		}
+	}
+}
+shared_focus = {
+	id = balanced_1
+	icon = GFX_goal_generic_production
+	cost = 2
+	relative_position_id = flexible_industry_focus
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = flexible_industry_focus
+	}
+	completion_reward = { 
+		custom_effect_tooltip = flexible_tt
+		add_to_variable = {balanced_construction_speed = 0.1}
+		if = {
+			limit = {
+				TAG = EST
+			}
+			13 = {
+				add_extra_state_shared_building_slots = 12
+				add_building_construction = {
+    				type = arms_factory
+   					level = 2
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = industrial_complex
+   					level = 10
+    				instant_build = yes
+				}
+			}
+			
+		}
+		else_if = {
+			limit = { 
+				TAG = WST
+			}
+			3 = {
+				add_extra_state_shared_building_slots = 12
+				add_building_construction = {
+    				type = industrial_complex
+   					level = 10
+    				instant_build = yes
+				}
+			}
+		}
+	}
+}
+shared_focus = {
+	id = balanced_2
+	icon = GFX_goal_generic_production
+	cost = 2
+	relative_position_id = balanced_1
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = balanced_1
+	}
+	completion_reward = { 
+		custom_effect_tooltip = flexible_tt
+		add_to_variable = {balanced_construction_speed = 0.1}
+		if = {
+			limit = {
+				TAG = EST
+			}
+			20 = {
+				add_extra_state_shared_building_slots = 12
+				add_building_construction = {
+    				type = arms_factory
+   					level = 2
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = industrial_complex
+   					level = 10
+    				instant_build = yes
+				}
+			}
+			
+		}
+		else_if = {
+			limit = { 
+				TAG = WST
+			}
+			10 = {
+				add_extra_state_shared_building_slots = 12
+				add_building_construction = {
+    				type = industrial_complex
+   					level = 10
+    				instant_build = yes
+				}
+			}
+		}
+	}
+}
+shared_focus = {
+	id = balanced_3
+	icon = GFX_goal_generic_production
+	cost = 2
+	relative_position_id = balanced_2
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = balanced_2
+	}
+	completion_reward = { 
+		custom_effect_tooltip = flexible_tt
+		add_to_variable = {balanced_construction_speed = 0.1}
+		if = {
+			limit = {
+				TAG = EST
+			}
+			18 = {
+				add_extra_state_shared_building_slots = 12
+				add_building_construction = {
+    				type = arms_factory
+   					level = 2
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = industrial_complex
+   					level = 10
+    				instant_build = yes
+				}
+			}
+			
+		}
+		else_if = {
+			limit = { 
+				TAG = WST
+			}
+			8 = {
+				add_extra_state_shared_building_slots = 12
+				add_building_construction = {
+    				type = industrial_complex
+   					level = 10
+    				instant_build = yes
+				}
+			}
+		}
+	}
+}
+#PRODUCTION
+shared_focus = {
+	id = production_1
+	icon = GFX_goal_continuous_naval_production
+	cost = 2
+	relative_position_id = aggressive_industry_focus
+	x = 4
+	y = 1
+	prerequisite = {
+		focus = buildup_industry_focus
+		focus = flexible_industry_focus
+	}
+	available = {
+		NOT = {
+			has_completed_focus = labour_1
+		}
+	}
+	completion_reward = {
+		custom_effect_tooltip = production_tt
+		add_to_variable = {balanced_efficiency_base = 0.1}
+		add_to_variable = {balanced_efficiency_cap = 0.1}
+		add_to_variable = {buildup_efficiency_base = 0.1}
+		add_to_variable = {buildup_efficiency_cap = 0.1}
+	}
+}
+shared_focus = {
+	id = production_2
+	icon = GFX_goal_continuous_naval_production
+	cost = 2
+	relative_position_id = production_1
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = balanced_1
+		focus = production_1
+	}
+	available = {
+		NOT = {
+			has_completed_focus = labour_2
+		}
+	}
+	completion_reward = {
+		custom_effect_tooltip = production_tt
+		add_to_variable = {balanced_efficiency_base = 0.1}
+		add_to_variable = {balanced_efficiency_cap = 0.1}
+		add_to_variable = {buildup_efficiency_base = 0.1}
+		add_to_variable = {buildup_efficiency_cap = 0.1}
+	}
+}
+shared_focus = {
+	id = production_3
+	icon = GFX_goal_continuous_naval_production
+	cost = 2
+	relative_position_id = production_2
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = balanced_2
+		focus = production_2
+	}
+	available = {
+		NOT = {
+			has_completed_focus = labour_3
+		}
+	}
+	completion_reward = {
+		custom_effect_tooltip = production_tt
+		add_to_variable = {balanced_efficiency_base = 0.1}
+		add_to_variable = {balanced_efficiency_cap = 0.1}
+		add_to_variable = {buildup_efficiency_base = 0.1}
+		add_to_variable = {buildup_efficiency_cap = 0.1}
+	}
+}
+
+#BUILDUP 
+shared_focus = {
+	id = buildup_industry_focus
+	icon = GFX_focus_generic_industry_3
+	cost = 2
+	relative_position_id = shared_ind_start
+	x = 2
+	y = 1
+	prerequisite = {
+		focus = shared_ind_start
+	}
+	mutually_exclusive = {
+		focus = aggressive_industry_focus
+		focus = flexible_industry_focus
+	}
+	completion_reward = {
+		set_variable = {buildup_efficiency_gain = 0.1}
+		set_variable = {buildup_efficiency_base = 0}
+		set_variable = {buildup_efficiency_cap = 0}
+		add_dynamic_modifier = {
+			modifier = buildup_industry
+		}
+		custom_effect_tooltip = buildup_tt_start
+		if = {
+			limit = {
+				TAG = EST
+			}
+			16 = {
+				add_extra_state_shared_building_slots = 15
+				add_building_construction = {
+    				type = industrial_complex
+   					level = 15
+    				instant_build = yes
+				}
+			}
+			
+		}
+		else_if = {
+			limit = { 
+				TAG = WST
+			}
+			6 = {
+				add_extra_state_shared_building_slots = 15
+				add_building_construction = {
+    				type = industrial_complex
+   					level = 15
+    				instant_build = yes
+				}
+			}
+		}
+	}
+}
+shared_focus = {
+	id = buildup_industry_1
+	icon = GFX_focus_generic_industry_3
+	cost = 2
+	relative_position_id = buildup_industry_focus
+	x = 2
+	y = 1
+	prerequisite = {
+		focus = buildup_industry_focus
+	}
+	completion_reward = {
+		add_to_variable = {buildup_efficiency_gain = 0.1}
+		custom_effect_tooltip = buildup_tt
+		if = {
+			limit = {
+				TAG = EST
+			}
+			16 = {
+				add_extra_state_shared_building_slots = 15
+				add_building_construction = {
+    				type = industrial_complex
+   					level = 15
+    				instant_build = yes
+				}
+			}
+			
+		}
+		else_if = {
+			limit = { 
+				TAG = WST
+			}
+			6 = {
+				add_extra_state_shared_building_slots = 15
+				add_building_construction = {
+    				type = industrial_complex
+   					level = 15
+    				instant_build = yes
+				}
+			}
+		}
+	}
+}
+shared_focus = {
+	id = buildup_industry_2
+	icon = GFX_focus_generic_industry_3
+	cost = 2
+	relative_position_id = buildup_industry_1
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = buildup_industry_1
+	}
+	completion_reward = {
+		add_to_variable = {buildup_efficiency_gain = 0.1}
+		custom_effect_tooltip = buildup_tt
+		if = {
+			limit = {
+				TAG = EST
+			}
+			16 = {
+				add_extra_state_shared_building_slots = 15
+				add_building_construction = {
+    				type = industrial_complex
+   					level = 15
+    				instant_build = yes
+				}
+			}
+			
+		}
+		else_if = {
+			limit = { 
+				TAG = WST
+			}
+			6 = {
+				add_extra_state_shared_building_slots = 15
+				add_building_construction = {
+    				type = industrial_complex
+   					level = 15
+    				instant_build = yes
+				}
+			}
+		}
+	}
+}
+shared_focus = {
+	id = buildup_industry_3
+	icon = GFX_focus_generic_industry_3
+	cost = 2
+	relative_position_id = buildup_industry_2
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = buildup_industry_2
+	}
+	completion_reward = {
+		add_to_variable = {buildup_efficiency_gain = 0.1}
+		custom_effect_tooltip = buildup_tt
+		if = {
+			limit = {
+				TAG = EST
+			}
+			16 = {
+				add_extra_state_shared_building_slots = 15
+				add_building_construction = {
+    				type = industrial_complex
+   					level = 15
+    				instant_build = yes
+				}
+			}
+			
+		}
+		else_if = {
+			limit = { 
+				TAG = WST
+			}
+			6 = {
+				add_extra_state_shared_building_slots = 15
+				add_building_construction = {
+    				type = industrial_complex
+   					level = 15
+    				instant_build = yes
+				}
+			}
+		}
+	}
+}
+shared_focus = {
+	id = research_slot_focus
+	icon = GFX_goal_continuous_research
+	cost = 2
+	relative_position_id = balanced_3
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = labour_3
+		focus = balanced_3
+		focus = production_3
+	}
+	completion_reward = { 
+		add_research_slot = 1
+	}
+}
+
+############################
+#MILITARY
+############################
+shared_focus = {
+	id = shared_mil_start
+	icon = GFX_goal_generic_army_doctrines 
+	cost = 0
+	x = 20
+	y = 0
+	bypass = {
+		always = yes
+	}
+	completion_reward = { 
+		custom_effect_tooltip = this_focus_does_nothing
+	}
+}
+shared_focus = {
+	id = everyone_serves
+	icon = GFX_focus_generic_manpower
+	cost = 2
+	relative_position_id = shared_mil_start
+	x = -6
+	y = 1
+	prerequisite = {
+		focus = shared_mil_start
+	}
+	mutually_exclusive = {
+		focus = special_forces_focus
+	}
+	completion_reward = { 
+		add_ideas = everyone_serves_idea
+		if = {
+			limit = {
+				TAG = EST
+			}
+			hidden_effect = {
+				load_oob = EAST_ALLMUSTSERVE
+			}
+			custom_effect_tooltip = spawn_inf
+		}
+		else_if = {
+			limit = {
+				TAG = WST
+			}
+			hidden_effect = {
+				load_oob = WEST_ALLMUSTSERVE
+			}
+			custom_effect_tooltip = spawn_inf
+		}
+	}
+}
+shared_focus = {
+	id = special_forces_focus
+	icon = GFX_goal_generic_special_forces
+	cost = 2
+	relative_position_id = shared_mil_start
+	x = -4
+	y = 1
+	prerequisite = {
+		focus = shared_mil_start
+	}
+	mutually_exclusive = {
+		focus = everyone_serves
+	}
+	completion_reward = { 
+		add_ideas = special_forces_idea
+		
+	}
+}
+shared_focus = {
+	id = special_forces_mountaineer
+	icon = GFX_focus_GRE_a_land_of_mountains
+	cost = 2
+	relative_position_id = special_forces_focus
+	x = -2
+	y = 1
+	prerequisite = {
+		focus = special_forces_focus
+	}
+	mutually_exclusive = {
+		focus = special_forces_paratroop
+		focus = special_forces_marine
+	}
+	completion_reward = { 
+		if = {
+			limit = {
+				TAG = EST
+			}
+			hidden_effect = {
+				load_oob = EAST_MOUNTAINEERS
+			}
+			custom_effect_tooltip = spawn_mountaineers
+		}
+		else_if = {
+			limit = {
+				TAG = WST
+			}
+			hidden_effect = {
+				load_oob = WEST_MOUNTAINEERS
+			}
+			custom_effect_tooltip = spawn_mountaineers
+		}
+		set_technology = {
+			tech_special_forces = 1
+			tech_mountaineers2 = 1
+		}
+	}
+}
+shared_focus = {
+	id = special_forces_marine
+	icon = GFX_goal_generic_build_navy
+	cost = 2
+	relative_position_id = special_forces_focus
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = special_forces_focus
+	}
+	mutually_exclusive = {
+		focus = special_forces_paratroop
+		focus = special_forces_mountaineer
+	}
+	completion_reward = { 
+		if = {
+			limit = {
+				TAG = EST
+			}
+			hidden_effect = {
+				load_oob = EAST_MARINES
+			}
+			custom_effect_tooltip = spawn_marines
+		}
+		else_if = {
+			limit = {
+				TAG = WST
+			}
+			hidden_effect = {
+				load_oob = WEST_MARINES
+			}
+			custom_effect_tooltip = spawn_marines
+		}
+		set_technology = {
+			tech_special_forces = 1
+			marines2 = 1
+		}
+	}
+}
+shared_focus = {
+	id = special_forces_paratroop
+	icon = GFX_focus_generic_paratrooper
+	cost = 2
+	relative_position_id = special_forces_focus
+	x = 2
+	y = 1
+	prerequisite = {
+		focus = special_forces_focus
+	}
+	mutually_exclusive = {
+		focus = special_forces_marine
+		focus = special_forces_mountaineer
+	}
+	completion_reward = { 
+		if = {
+			limit = {
+				TAG = EST
+			}
+			hidden_effect = {
+				load_oob = EAST_PARATROOPERS
+			}
+			custom_effect_tooltip = spawn_paratroops
+		}
+		else_if = {
+			limit = {
+				TAG = WST
+			}
+			hidden_effect = {
+				load_oob = WEST_PARATROOPERS
+			}
+			custom_effect_tooltip = spawn_paratroops
+		}
+		set_technology = {
+			tech_special_forces = 1
+			paratroopers2 = 1
+		}
+		add_equipment_to_stockpile = {
+			type = transport_plane_equipment_1
+			amount = 200
+		}
+	}
+}
+shared_focus = {
+	id = light_tanks
+	icon = GFX_focus_generic_tankette
+	cost = 2
+	relative_position_id = shared_mil_start
+	x = -2
+	y = 1
+	prerequisite = {
+		focus = shared_mil_start
+	}
+	mutually_exclusive = {
+		focus = medium_tanks
+		focus = heavy_tanks
+	}
+	completion_reward = { 
+		set_technology = {
+			improved_light_tank_chassis = 1
+		}
+		add_ideas = light_tank_production
+		
+		add_tech_bonus = {
+			category = cat_light_armor
+			bonus = 2
+			uses = 1
+		}
+		
+		create_equipment_variant = {
+			name = "Light Tank Variant"
+			type = light_tank_chassis_1
+			modules = {
+				main_armament_slot = tank_small_cannon_2
+				turret_type_slot = tank_light_three_man_tank_turret
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = secondary_turret_hmg
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_3 = additional_machine_guns
+				special_type_slot_4 = smoke_launchers
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 9
+			}
+		}
+		add_equipment_to_stockpile = {
+			type = light_tank_chassis_1
+			amount = 2500
+			variant_name = "Light Tank Variant"
+		}
+	}
+}
+shared_focus = {
+	id = medium_tanks
+	icon = GFX_goal_generic_army_tanks
+	cost = 3
+	relative_position_id = shared_mil_start
+	x = 0
+	y = 1
+	prerequisite = {
+		focus = shared_mil_start
+	}
+	mutually_exclusive = {
+		focus = light_tanks
+		focus = heavy_tanks
+	}
+	completion_reward = { 
+		set_technology = {
+			improved_medium_tank_chassis = 1
+		}
+		add_ideas = medium_tank_production
+		
+		create_equipment_variant = {
+			name = "Medium Tank Variant"
+			type = medium_tank_chassis_1
+			modules = {
+				main_armament_slot = tank_medium_cannon
+				turret_type_slot = tank_medium_three_man_tank_turret
+				suspension_type_slot = tank_christie_suspension
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = secondary_turret_hmg
+				special_type_slot_2 = secondary_turret_hmg
+				special_type_slot_3 = additional_machine_guns
+				special_type_slot_4 = additional_machine_guns
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+			}
+			
+		}
+		add_equipment_to_stockpile = {
+			type = medium_tank_chassis_1
+			amount = 1500
+			variant_name = "Medium Tank Variant"
+		}
+	}
+}
+shared_focus = {
+	id = heavy_tanks
+	icon = GFX_focus_generic_army_tanks2
+	cost = 4
+	relative_position_id = shared_mil_start
+	x = 2
+	y = 1
+	prerequisite = {
+		focus = shared_mil_start
+	}
+	mutually_exclusive = {
+		focus = light_tanks
+		focus = medium_tanks
+	}
+	completion_reward = { 
+		set_technology = {
+			improved_heavy_tank_chassis = 1
+		}
+		add_ideas = heavy_tank_production
+		
+		create_equipment_variant = {
+			name = "Heavy Tank Variant"
+			type = heavy_tank_chassis_1
+			modules = {
+				main_armament_slot = tank_heavy_cannon
+				turret_type_slot = tank_heavy_three_man_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_cast_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = secondary_turret_small_cannon
+				special_type_slot_2 = secondary_turret_small_cannon
+				special_type_slot_3 = secondary_turret_small_cannon
+				special_type_slot_4 = wet_ammo_storage
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 9
+			}
+		}
+		add_equipment_to_stockpile = {
+			type = heavy_tank_chassis_1
+			amount = 1000
+			variant_name = "Heavy Tank Variant"
+		}
+		
+	}
+}
+shared_focus = { #Prerequiesite removed so not in game currently
+	id = super_heavy_tanks
+	icon = t
+	cost = 8
+	relative_position_id = heavy_tanks
+	x = 0
+	y = 1
+	
+	completion_reward = {
+		set_technology = {
+			super_heavy_tank_chassis = 1
+		}
+		add_ideas = super_heavy_tank_production
+		add_equipment_to_stockpile = {
+			type = super_heavy_tank_chassis
+			amount = 400
+		}
+	}
+}
+shared_focus = {
+	id = land_forts
+	icon = GFX_goal_generic_fortify_city
+	cost = 3
+	relative_position_id = shared_mil_start 
+	x = 4
+	y = 1
+	prerequisite = {
+		focus = shared_mil_start
+	}
+	completion_reward = { 
+		add_timed_idea = {
+			idea = build_forts
+			days = 60
+		}
+	}
+}
+shared_focus = {
+	id = army_logi_drive
+	icon = GFX_focus_generic_truck
+	cost = 3
+	relative_position_id = shared_mil_start 
+	x = 6
+	y = 1
+	prerequisite = {
+		focus = shared_mil_start
+	}
+	completion_reward = { 
+		add_timed_idea = {
+			idea = logi_drive
+			days = 60
+		}
+	}
+}
+############################
+#AIR
+############################
+
+shared_focus = {
+	id = shared_air_start
+	icon = GFX_goal_generic_air_doctrine
+	cost = 0
+	x = 35
+	y = 0
+	bypass = {
+		always = yes
+	}
+	completion_reward = {
+		custom_effect_tooltip = this_focus_does_nothing
+	}
+	
+}
+shared_focus = {
+	id = scout_planes
+	icon = GFX_focus_generic_copy_plane_designs
+	cost = 2
+	relative_position_id = shared_air_start 
+	x = -3
+	y = 1
+	prerequisite = {
+		focus = shared_air_start
+	}
+	completion_reward = {
+		create_equipment_variant = {
+			name = "Scout Plane Variant"
+			type = medium_plane_scout_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = recon_camera
+				engine_type_slot = engine_1_2x
+			}
+		}
+		add_equipment_to_stockpile = {
+			type = medium_plane_scout_plane_airframe_1
+			amount = 30
+			variant_name = "Scout Plane Variant"
+		}
+	}
+}
+shared_focus = {
+	id = light_fighters
+	icon = GFX_goal_generic_air_fighter2
+	cost = 4
+	relative_position_id = shared_air_start 
+	x = -1
+	y = 1
+	prerequisite = {
+		focus = shared_air_start
+	}
+	mutually_exclusive = {
+		focus = heavy_fighters
+	}
+	completion_reward = {
+		set_technology = {
+			improved_small_airframe = 1
+		}
+		create_equipment_variant = {
+			name = "Light Fighters Variant"
+			type = small_plane_airframe_2
+			modules = {
+				fixed_main_weapon_slot = light_mg_2x
+				fixed_auxiliary_weapon_slot_1 = light_mg_2x
+				fixed_auxiliary_weapon_slot_2 = light_mg_4x
+				special_type_slot_1 = self_sealing_fuel_tanks_small
+				special_type_slot_2 = armor_plate_small
+				special_type_slot_3 = drop_tanks
+			}
+
+		}
+		add_equipment_to_stockpile = {
+			type = small_plane_airframe_2
+			amount = 100
+			variant_name = "Light Fighters Variant"
+		}
+		
+	}
+}
+shared_focus = {
+	id = heavy_fighters
+	icon = GFX_goal_generic_air_fighter
+	cost = 2
+	relative_position_id = shared_air_start 
+	x = 1
+	y = 1
+	prerequisite = {
+		focus = shared_air_start
+	}
+	mutually_exclusive = {
+		focus = light_fighters
+	}
+	completion_reward = {
+		set_technology = {
+			improved_small_airframe = 1
+			aa_cannon_1 = 1
+			improved_medium_airframe = 1
+		}
+		create_equipment_variant = {
+			name = "Heavy Fighters Variant"
+			type = medium_plane_fighter_airframe_1
+			modules = {
+				fixed_main_weapon_slot = aircraft_cannon_1_1x
+				fixed_auxiliary_weapon_slot_1 = light_mg_2x
+				fixed_auxiliary_weapon_slot_2 = light_mg_4x
+				fixed_auxiliary_weapon_slot_3 = aircraft_cannon_1_1x
+				engine_type_slot = engine_2_2x
+				special_type_slot_1 = self_sealing_fuel_tanks_medium
+				special_type_slot_2 = lmg_defense_turret
+				special_type_slot_3 = fuel_tanks_medium
+				special_type_slot_4 = fuel_tanks_medium
+			}
+
+		}
+		add_equipment_to_stockpile = {
+			type = medium_plane_fighter_airframe_1
+			amount = 200
+			variant_name = "Heavy Fighters Variant"
+		}
+		
+	}
+}
+shared_focus = {
+	id = air_defence_focus
+	icon = GFX_focus_generic_air_defense
+	cost = 2
+	relative_position_id = shared_air_start
+	x = 3
+	y = 1
+	prerequisite = {
+		focus = shared_air_start
+	}
+	completion_reward = { 
+		add_ideas = air_defence_idea
+	}
+}
+shared_focus = {
+	id = close_air_support
+	icon = GFX_focus_generic_armored_air_support
+	cost = 2
+	relative_position_id = light_fighters
+	x = -1
+	y = 1
+	prerequisite = {
+		focus = light_fighters
+		focus = heavy_fighters
+	}
+	mutually_exclusive = {
+		focus = tactical_bombing
+	}
+	completion_reward = {
+		create_equipment_variant = {
+			name = "CAS Variant"
+			type = small_plane_cas_airframe_1
+			modules = {
+				fixed_main_weapon_slot = small_bomb_bay
+				fixed_auxiliary_weapon_slot_1 = small_bomb_bay
+				special_type_slot_1 = self_sealing_fuel_tanks_small
+				special_type_slot_2 = dive_brakes_small
+			}
+
+		}
+		add_equipment_to_stockpile = {
+			type = small_plane_cas_airframe
+			amount = 200
+			variant_name = "CAS Variant"
+		}
+	}
+}
+shared_focus = {
+	id = tactical_bombing
+	icon = GFX_goal_generic_air_bomber
+	cost = 2
+	relative_position_id = light_fighters
+	x = 1
+	y = 1
+	prerequisite = {
+		focus = light_fighters
+		focus = heavy_fighters
+	}
+	mutually_exclusive = {
+		focus = close_air_support
+	}
+	completion_reward = {
+		create_equipment_variant = {
+			name = "Tactical Bomber Variant"
+			type = medium_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = medium_bomb_bay
+				fixed_auxiliary_weapon_slot_1 = medium_bomb_bay
+				fixed_auxiliary_weapon_slot_2 = bomb_locks
+				fixed_auxiliary_weapon_slot_3 = bomb_locks
+				engine_type_slot = engine_2_4x
+				special_type_slot_1 = self_sealing_fuel_tanks_medium
+				special_type_slot_2 = fuel_tanks_medium
+				special_type_slot_3 = lmg_defense_turret
+				special_type_slot_4 = fuel_tanks_medium
+			}
+
+		}
+		add_equipment_to_stockpile = {
+			type = medium_plane_airframe_1
+			amount = 100
+			variant_name = "Tactical Bomber Variant"
+		}
+		set_technology = {
+			improved_medium_airframe = 1
+		}
+		add_ideas = tac_bomber_production
+	}
+}
+shared_focus = {
+	id = strategic_bombing
+	icon = GFX_focus_generic_long_range_aircraft
+	cost = 2
+	relative_position_id = light_fighters
+	x = 3
+	y = 1
+	prerequisite = {
+		focus = light_fighters
+		focus = heavy_fighters
+	}
+	completion_reward = {
+		create_equipment_variant = {
+			name = "Strategic Bomber Variant"
+			type = large_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = large_bomb_bay
+				fixed_auxiliary_weapon_slot_1 = large_bomb_bay
+				fixed_auxiliary_weapon_slot_2 = large_bomb_bay
+				fixed_auxiliary_weapon_slot_3 = large_bomb_bay
+				engine_type_slot = engine_3_6x
+				special_type_slot_1 = self_sealing_fuel_tanks_large
+				special_type_slot_2 = fuel_tanks_large
+				special_type_slot_3 = hmg_defense_turret_2x
+				special_type_slot_4 = hmg_defense_turret_2x
+				special_type_slot_5 = fuel_tanks_large
+			}
+
+		}
+		add_equipment_to_stockpile = {
+			type = large_plane_airframe_1
+			amount = 50
+			variant_name = "Strategic Bomber Variant"
+		}
+		set_technology = {
+			improved_large_airframe = 1
+		}
+		add_ideas = strat_bomber_production
+	}
+}

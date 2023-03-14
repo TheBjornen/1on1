@@ -1,0 +1,101 @@
+﻿l_english:
+
+ #Decision Category
+ mod_buildup_phase:0 "War"
+ mod_buildup_phase_desc:0 ""
+
+ mod_win_condition:0 "Win Condition"
+ mod_win_condition_desc:0 ""
+
+ mod_cards_in_hand:0 "Cards in hand"
+ mod_cards_in_hand_desc:0 ""
+
+ #Decisions
+ mod_countdown:0 "Countdown"
+
+ mod_production_bonus:0 "Production bonus - 20 days"
+
+ #Ideas
+ doctrine_spirit:0 "Army Doctrines"
+ mod_boost_production_efficiency:0 "Production boost - 20 days"
+
+ mod_explanation_title:0 "§HHow it works§"
+ mod_explanation_text_1:0 "If you have less than 20 city points you will lose points for every city point you have lost. This triggers every third day."
+ mod_explanation_text_2:0 "For example if you have 17 city points you will lose 3 point every third day."
+
+ aggressive_industry:0 "Aggressive Industry"
+ flexible_industry:0 "Flexible Industry"
+ buildup_industry:0 "Buildup Industry"
+ 
+ everyone_serves_idea:0 "Everyone Serves"
+ special_forces_idea:0 "Special Forces Prioritisation"
+ light_tank_production:0 "Light Tank Production"
+ medium_tank_production:0 "Medium Tank Production"
+ heavy_tank_production:0 "Heavy Tank Production"
+ build_forts:0 "Fortification Construction"
+ logi_drive:0 "Logistics Drive"
+
+ tac_bomber_production:0 "Tactical Bomber Production"
+ strat_bomber_production:0 "Strategic Bomber Production"
+ air_defence_idea:0 "Air Defence"
+
+ #Tooltips
+ this_focus_does_nothing:0 "§GThis focus does nothing and can be bypassed immediately.§!"
+ 
+ aggressive_tt_start:0 "      Equipment Capture Ratio: §G+3%§!\n      Equipment Conversion Speed: §G+10%§!" #dont mind the weird blue text if you use VSCODE, hoi4 addon hates colons
+ aggressive_tt:0 "Modify §YAggressive Industry§! by\n      Equipment Capture Ratio: §G+3%§!"
+ labour_tt:0 "Modify §YAggressive Industry§! or §YFlexible Industry§! by\n      Factory Output: §G+10%§!\n      Production Retention: §G+20%§!\n      Equipment Conversion Speed: §G+10%§!"
+ flexible_tt_start:0 "      Construction Speed: §G +10%§!"
+ flexible_tt:0 "Modify §YFlexible Industry§! By:\n      Construction Speed: §G +10%§!"
+ production_tt:0 "Modify §YBuildup Industry§! or §YFlexible Industry§! by\n      Production Efficiency Base: §G+10%§!\n      Production Efficiency Cap: §G+10%§!"
+ buildup_tt_start:0 "       Production Efficiency Gain: §G+10%§!"
+ buildup_tt:0 "Modify §YBuildup Industry§! By:\n       Production Efficiency Gain: §G+10%§!"
+
+ spawn_inf:0 "Spawns §G6§! §Y7/2§! Infantry Divisions"
+ spawn_mountaineers:0 "Spawns §G4§! §Y10/5§! Mountaineers"
+ spawn_marines:0 "Spawns §G4§! §Y10/5§! Marines"
+ spawn_paratroops:0 "Spawns §G2§! §Y30 Width§! Paratroopers"
+ #FOCUSES
+ shared_ind_start:0 "Industry"
+ aggressive_industry_focus:0 "Aggressive Industry"
+ aggro_industry_1:0 "Aggressive Industry I"
+ aggro_industry_2:0 "Aggressive Industry II"
+ aggro_industry_3:0 "Aggressive Industry III"
+ labour_1:0 "Labour I"
+ labour_2:0 "Labour II"
+ labour_3:0 "Labour III"
+ flexible_industry_focus:0 "Flexible Industry"
+ balanced_1:0 "Balanced Industry I"
+ balanced_2:0 "Balanced Industry II"
+ balanced_3:0 "Balanced Industry III"
+ production_1:0 "Production I"
+ production_2:0 "Production II"
+ production_3:0 "Production III"
+ buildup_industry_focus:0 "Buildup Industry"
+ buildup_industry_1:0 "Buildup Industry I"
+ buildup_industry_2:0 "Buildup Industry II"
+ buildup_industry_3:0 "Buildup Industry III"
+ research_slot_focus:0 "Research Slot"
+ 
+ shared_mil_start:0 "Military"
+ everyone_serves:0 "Everyone Serves"
+ special_forces_focus:0 "Special Forces Priority"
+ special_forces_mountaineer:0 "Prioritise Mountaineers"
+ special_forces_marine:0 "Prioritise Marines"
+ special_forces_paratroop:0 "Prioritise Paratroopers"
+ light_tanks:0 "Light Tank Focus"
+ medium_tanks:0 "Medium Tank Focus"
+ heavy_tanks:0 "Heavy Tank Focus"
+ land_forts:0 "Fort Construction" 
+ army_logi_drive:0 "Logistics Drive"
+  
+ shared_air_start:0 "Air"
+ scout_planes:0 "Scout Planes"
+ light_fighters:0 "Improved Fighters"
+ close_air_support:0 "Close Air Support"
+ tactical_bombing:0 "Tactical Bombing"
+ heavy_fighters:0 "Heavy Fighters"
+ strategic_bombing:0 "Strategic Bombing"
+ air_defence_focus:0 "Air Defence"
+ 
+ 

@@ -1,0 +1,18 @@
+﻿focus_tree = {
+	id = generic_west_tree_west
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = WST
+			
+		}
+
+		
+	}
+	shared_focus = shared_mil_start
+	shared_focus = shared_air_start
+	shared_focus = shared_ind_start
+#End of focuses 
+ }

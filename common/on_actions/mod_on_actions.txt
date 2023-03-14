@@ -1,0 +1,346 @@
+on_actions = {
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = {
+						OR = {
+							state = 1
+							state = 22
+							state = 9
+							state = 10
+							state = 11
+							state = 21
+							state = 19
+							state = 20
+						}
+					}
+				}
+				if = {
+					limit = {
+						tag = WST
+					}
+					ROOT = {
+						add_to_variable = {
+							var = points_west
+							value = 1
+						}
+						subtract_from_variable = {
+							var = points_east
+							value = 1
+						}
+					}
+					FROM = {
+						add_to_variable = {
+							var = points_west
+							value = 1
+						}
+						subtract_from_variable = {
+							var = points_east
+							value = 1
+						}
+					}
+				}
+				if = {
+					limit = {
+						tag = EST
+					}
+					ROOT = {
+						add_to_variable = {
+							var = points_east
+							value = 1
+						}
+						subtract_from_variable = {
+							var = points_west
+							value = 1
+						}
+					}
+					FROM = {
+						add_to_variable = {
+							var = points_east
+							value = 1
+						}
+						subtract_from_variable = {
+							var = points_west
+							value = 1
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM.FROM = {
+						OR = {
+							state = 5
+							state = 15
+						}
+					}
+				}
+				if = {
+					limit = {
+						tag = WST
+					}
+					ROOT = {
+						add_to_variable = {
+							var = points_west
+							value = 2
+						}
+						subtract_from_variable = {
+							var = points_east
+							value = 2
+						}
+					}
+					FROM = {
+						add_to_variable = {
+							var = points_west
+							value = 2
+						}
+						subtract_from_variable = {
+							var = points_east
+							value = 2
+						}
+					}
+				}
+				if = {
+					limit = {
+						tag = EST
+					}
+					ROOT = {
+						add_to_variable = {
+							var = points_east
+							value = 2
+						}
+						subtract_from_variable = {
+							var = points_west
+							value = 2
+						}
+					}
+					FROM = {
+						add_to_variable = {
+							var = points_east
+							value = 2
+						}
+						subtract_from_variable = {
+							var = points_west
+							value = 2
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM.FROM = {
+						OR = {
+							state = 8
+							state = 18
+							state = 3
+							state = 13
+						}
+					}
+				}
+				if = {
+					limit = {
+						tag = WST
+					}
+					ROOT = {
+						add_to_variable = {
+							var = points_west
+							value = 3
+						}
+						subtract_from_variable = {
+							var = points_east
+							value = 3
+						}
+					}
+					FROM = {
+						add_to_variable = {
+							var = points_west
+							value = 3
+						}
+						subtract_from_variable = {
+							var = points_east
+							value = 3
+						}
+					}
+				}
+				if = {
+					limit = {
+						tag = EST
+					}
+					ROOT = {
+						add_to_variable = {
+							var = points_east
+							value = 3
+						}
+						subtract_from_variable = {
+							var = points_west
+							value = 3
+						}
+					}
+					FROM = {
+						add_to_variable = {
+							var = points_east
+							value = 3
+						}
+						subtract_from_variable = {
+							var = points_west
+							value = 3
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					FROM.FROM = {
+						OR = {
+							state = 6
+							state = 16
+						}
+					}
+				}
+				if = {
+					limit = {
+						tag = WST
+					}
+					ROOT = {
+						add_to_variable = {
+							var = points_west
+							value = 8
+						}
+						subtract_from_variable = {
+							var = points_east
+							value = 8
+						}
+					}
+					FROM = {
+						add_to_variable = {
+							var = points_west
+							value = 8
+						}
+						subtract_from_variable = {
+							var = points_east
+							value = 8
+						}
+					}
+				}
+				if = {
+					limit = {
+						tag = EST
+					}
+					ROOT = {
+						add_to_variable = {
+							var = points_east
+							value = 8
+						}
+						subtract_from_variable = {
+							var = points_west
+							value = 8
+						}
+					}
+					FROM = {
+						add_to_variable = {
+							var = points_east
+							value = 8
+						}
+						subtract_from_variable = {
+							var = points_west
+							value = 8
+						}
+					}
+				}
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			add_to_variable = {
+				var = temp_days
+				value = 1
+			}
+			if = {
+				limit = {
+					check_variable = { points_west < 20 }
+					check_variable = { temp_days > 2}
+				}
+				set_temp_variable = { point_temp = 20 }
+				subtract_from_temp_variable = { point_temp = points_west }
+				subtract_from_variable = {
+					var = morale_west
+					value = point_temp
+				}
+				clamp_variable = {
+					var = morale_west
+					min = 0
+					max = 100
+				}
+				subtract_from_variable = {
+					var = temp_days
+					value = temp_days
+				}
+			}
+			if = {
+				limit = {
+					check_variable = { points_east < 20 }
+					check_variable = { temp_days > 2}
+				}
+				set_temp_variable = { point_temp = 20 }
+				subtract_from_temp_variable = { point_temp = points_east }
+				subtract_from_variable = {
+					var = morale_east
+					value = point_temp
+				}
+				add_to_temp_variable = { point_temp = morale_east }
+				multiply_temp_variable = { point_temp = 3 }
+				set_variable = {
+					var = morale_calc
+					value = point_temp
+				}
+				clamp_variable = {
+					var = morale_east
+					min = 0
+					max = 100
+				}
+				subtract_from_variable = {
+					var = temp_days
+					value = temp_days
+				}
+			}
+			if = {
+				limit = {
+					check_variable = { morale_east = 0 }
+				}
+				country_event = { id = victory.1 }
+				white_peace = WST
+				white_peace = EST
+			}
+			if = {
+				limit = {
+					check_variable = { morale_west = 0 }
+					check_variable = { temp_days = 1 }
+				}
+				country_event = { id = victory.2 }
+				white_peace = WST
+				white_peace = EST
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					check_variable = { points_west = points_east }
+				}
+				set_variable = {
+					var = morale_calc
+					value = 0
+				}
+			}
+		}
+	}
+	on_startup = {
+		effect = {
+			set_variable = {
+				var = temp_days
+				value = 0
+			}
+		}
+	}
+}

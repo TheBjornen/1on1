@@ -1,0 +1,25 @@
+﻿l_english:
+###COUNTRIES.
+ EST_fascism:0 "East"
+ EST_fascism_DEF:0 "the East"
+ EST_democratic:0 "East"
+ EST_democratic_DEF:0 "the East"
+ EST_neutrality:1 "East"
+ EST_neutrality_DEF:1 " the East"
+ EST_communism:0 "East"
+ EST_communism_DEF:0 "the East"
+ EST_fascism_ADJ:0 "Eastern"
+
+ WST_democratic_ADJ:0 "the West"
+ WST_neutrality_ADJ:0 "the West"
+ WST_communism_ADJ:0 "the West"
+ WST_fascism:0 "West"
+ WST_fascism_DEF:0 "the West"
+ WST_democratic:0 "West"
+ WST_democratic_DEF:0 "the West"
+ WST_neutrality:1 "West"
+ WST_neutrality_DEF:1 "the West"
+ WST_communism:0 "West"
+ WST_communism_DEF:0 "the West"
+ WST_fascism_ADJ:0 "Western"
+

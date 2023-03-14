@@ -1,0 +1,24 @@
+add_namespace = victory
+
+country_event = {
+	id = victory.1
+	title = "TEST WEST VICTORY TITLE"
+	desc = "TEST WEST VICTORY DESC"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "GOOD JOB WEST"
+	}
+}
+country_event = {
+	id = victory.2
+	title = "TEST EAST VICTORY TITLE"
+	desc = "TEST EAST VICTORY DESC"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "GOOD JOB EAST"
+	}
+}

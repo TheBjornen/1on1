@@ -1,0 +1,20 @@
+mod_buildup_phase = {
+
+	icon = GFX_decision_category_usa_intervention_mandate
+
+	priority = 2
+}
+mod_win_condition = {
+
+	icon = GFX_decision_category_generic_democracy
+	visible_when_empty = yes
+	scripted_gui = mod_win_condition
+
+	priority = 3
+}
+mod_cards_in_hand = {
+
+	visible_when_empty = yes
+
+	priority = 1
+}

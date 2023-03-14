@@ -1,0 +1,132 @@
+ideas = {
+	country = {
+		
+		doctrine_spirit = {
+			picture = generic_neutrality_drift_bonus
+			modifier = {
+				cat_mobile_warfare_cost_factor = -0.15
+				cat_superior_firepower_cost_factor = 0.5
+				cat_mass_assault_cost_factor = -0.25
+			}
+		}
+
+		#ARMY
+		everyone_serves_idea = {
+			picture = generic_manpower_bonus
+			modifier = {
+				training_time_factor = -0.3
+			}
+		}
+		special_forces_idea = {
+			picture = eng_special_air_service
+			modifier = {
+				special_forces_min = 10
+			}
+		}
+		special_forces_mountaineers = {
+			picture = t
+			modifier = {
+				special_forces_min = 10
+				
+			}
+		}
+		special_forces_marines = {
+			picture = t
+			modifier = {
+				special_forces_min = 10
+				
+			}
+		}
+		special_forces_paratroops = {
+			picture = t
+			modifier = {
+				special_forces_min = 10
+				
+			}
+		}
+		light_tank_production = {
+			picture = generic_acquire_tanks
+			equipment_bonus = {
+				light_tank_chassis = {
+					instant = yes
+					build_cost_ic = -0.25
+				}
+			}
+		}
+		medium_tank_production = {
+			picture = generic_acquire_tanks
+			equipment_bonus = {
+				medium_tank_chassis = {
+					instant = yes
+					build_cost_ic = -0.2
+				}
+			}
+		}
+		heavy_tank_production = {
+			picture = generic_acquire_tanks
+			equipment_bonus = {
+				heavy_tank_chassis = {
+					instant = yes
+					build_cost_ic = -0.15
+				}
+			}
+		}
+		super_heavy_tank_production = {
+			picture = t
+			equipment_bonus = {
+				super_heavy_tank_chassis = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+			}
+		}
+		build_forts = {
+			picture = generic_fortify_the_borders
+			modifier = {
+				production_speed_bunker_factor = 1
+			}
+		}
+		logi_drive = {
+			picture = generic_build_infrastructure
+			equipment_bonus = {
+				motorized_equipment = {
+					instant = yes
+					build_cost_ic = -0.5
+				}
+				support_equipment = {
+					instant = yes
+					build_cost_ic = -0.5
+				}
+				train_equipment = {
+					instant = yes
+					build_cost_ic = -0.5
+				}
+			}
+		}
+		air_defence_idea = {
+			picture = generic_aircraft_support
+			modifier = {
+				production_speed_anti_air_building_factor = 1
+				production_speed_radar_station_factor = 1
+			}
+		}
+		tac_bomber_production = {
+			picture = generic_air_payment
+			equipment_bonus = {
+				medium_plane_airframe = {
+					instant = yes
+					build_cost_ic = -0.15
+				}
+			}
+		}
+		strat_bomber_production = {
+			picture = generic_air_research
+			equipment_bonus = {
+				large_plane_airframe = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+			}
+		}
+	}
+}

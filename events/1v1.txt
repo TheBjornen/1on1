@@ -1,0 +1,73 @@
+﻿###########################
+# Wargoal Justification Events
+###########################
+
+add_namespace = 1v1
+
+# Fascists vs Neutrals
+country_event = {
+	id = 1v1.1
+	title = 1v1.1
+		hidden = yes 
+	desc = 1v1.desc
+	picture = GFX_report_event_fascist_speech  
+	
+	is_triggered_only = yes
+	immediate = {add_equipment_to_stockpile = {
+    type = infantry_equipment_1
+    amount = 10000
+    producer = EST
+}
+add_equipment_to_stockpile = {
+    type = support_equipment_1
+    amount = 300
+    producer = EST
+}
+add_equipment_to_stockpile = {
+    type = artillery_equipment_1
+    amount = 500
+    producer = EST
+}
+add_equipment_to_stockpile = {
+    type = anti_air_equipment_1
+    amount = 250
+    producer = EST
+}
+add_equipment_to_stockpile = {
+    type = anti_tank_equipment_1
+    amount = 250
+    producer = EST
+}
+add_equipment_to_stockpile = {
+    type = motorized_equipment_1
+    amount = 1000
+    producer = EST
+}
+#add_equipment_to_stockpile = { #Not the right code apparently
+ #   type = armoured_car_equipment_1 #this is apprently wrong, needs double checkin'
+  #  amount = 50
+  #  producer = EST
+#}
+add_equipment_to_stockpile = {
+    type = light_tank_chassis_1
+    amount = 100
+    producer = EST
+}
+add_equipment_to_stockpile = {
+    type = medium_tank_chassis_1
+    amount = 100
+    producer = EST
+}
+add_equipment_to_stockpile = {
+    type = heavy_tank_chassis_1
+    amount = 50
+    producer = EST
+} }
+	
+	
+	option = {
+		name = war_justification.1.a
+		
+	}
+}
+

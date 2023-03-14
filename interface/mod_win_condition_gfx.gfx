@@ -1,0 +1,39 @@
+spriteTypes = {
+	progressbartype = {
+		name = "GFX_morale_east"
+		color = { 1.0 1.0 1.0 }
+		colortwo = { 1.0 1.0 1.0 }
+
+		textureFile1 = "gfx/interface/morale_green.dds"
+		textureFile2 = "gfx/interface/morale_red.dds"
+
+		size = { x = 250 y = 15}
+		effectFile = "gfx/FX/progress.lua"
+
+		steps = 100
+	}
+
+	progressbartype = {
+		name = "GFX_morale_west"
+		color = { 1.0 1.0 1.0 }
+		colortwo = { 1.0 1.0 1.0 }
+
+		textureFile1 = "gfx/interface/morale_green.dds"
+		textureFile2 = "gfx/interface/morale_red.dds"
+
+		size = { x = 250 y = 15}
+		effectFile = "gfx/FX/progress.lua"
+
+		steps = 100
+	}
+
+	SpriteType = {
+		name = "GFX_east_flag"
+		texturefile = "gfx/interface/east_flag.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_west_flag"
+		texturefile = "gfx/interface/west_flag.dds"
+	}	
+}

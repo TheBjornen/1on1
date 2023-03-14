@@ -1,0 +1,30 @@
+state = {
+	id = 19
+	name = "STATE_19"
+
+	resources = {
+		oil=6.000
+	}
+
+	history = {
+		owner = EST
+		add_core_of = EST
+
+		victory_points = { 1008 100 }
+
+		buildings = {
+			air_base = 3
+			infrastructure = 2
+			industrial_complex = 4
+		}
+	}
+
+	provinces = {
+		357 405 446 474 505 526 629 682 988 990 993 994 995 1000 1001 1004 1007 1008 1014 1018 1021 1026 3917 
+	}
+
+	manpower = 1
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 0.000
+}
